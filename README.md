@@ -1,0 +1,1 @@
+A simple search tool to help developers find AI model links quickly. It uses a React frontend to show the search results and a Go backend to store and find the data. The two parts are separate but talk to each other through a secure connection (CORS), making the search fast and easy to use.
