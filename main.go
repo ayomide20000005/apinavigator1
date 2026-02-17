@@ -13,7 +13,7 @@ func main() {
 
 	// CORS Setup: Crucial for React to talk to Go
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
-		AllowOrigins: []string{"http://localhost:5173"},
+		AllowOrigins: []string{"*"},
 		AllowMethods: []string{http.MethodGet, http.MethodPost},
 	}))
 
@@ -54,5 +54,5 @@ func main() {
 		})
 	})
 
-	e.Logger.Fatal(e.Start(":1323"))
+	e.Logger.Fatal(e.Start(":8080"))
 }
