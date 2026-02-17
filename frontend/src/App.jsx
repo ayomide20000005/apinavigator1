@@ -16,7 +16,8 @@ export default function App() {
       setResult(null);
       
       try {
-        const response = await fetch(`http://localhost:1323/search?model=${query.toLowerCase()}`);
+        // UPDATED: Now points to your live Render backend
+        const response = await fetch(`https://apinavigator1.onrender.com/search?model=${query.toLowerCase()}`);
         const data = await response.json();
         
         if (!response.ok) {
@@ -25,7 +26,7 @@ export default function App() {
           setResult(data);
         }
       } catch (err) {
-        setError("Backend is offline. Run 'go run main.go'!");
+        setError("The server is waking up or offline. Please try again in 30 seconds.");
       } finally {
         setLoading(false);
       }
